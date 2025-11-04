@@ -444,19 +444,37 @@ Dúvidas? Só perguntar! 😊
             await msg_processando.edit_text(f"❌ Erro ao processar: {e}")
     
     def iniciar(self):
-        """Inicia o bot"""
+        """Inicia o bot em modo polling (para desenvolvimento local)"""
         print("🤖 Bot do Telegram iniciado!")
         print("📱 Aguardando mensagens...\n")
         print("Pressione Ctrl+C para parar\n")
         
         self.app.run_polling(allowed_updates=Update.ALL_TYPES)
+    
+    async def processar_webhook_update(self, update_data: dict):
+        """
+        Processa um update recebido via webhook
+        
+        Args:
+            update_data: Dados do update em formato dict
+        """
+        try:
+            # Converter dict para objeto Update
+            update = Update.de_json(update_data, self.app.bot)
+            
+            # Processar o update
+            await self.app.process_update(update)
+            
+        except Exception as e:
+            print(f"Erro ao processar webhook update: {e}")
+            raise
 
 
 def main():
-    """Função principal"""
+    """Função principal para execução local (modo polling)"""
     
     print("=" * 70)
-    print("🤖 ASSISTENTE FINANCEIRO - BOT TELEGRAM")
+    print("🤖 ASSISTENTE FINANCEIRO - BOT TELEGRAM (MODO POLLING)")
     print("=" * 70 + "\n")
     
     # Carregar variáveis de ambiente

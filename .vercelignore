@@ -1,0 +1,62 @@
+# Arquivos e pastas desnecessárias para o deploy na Vercel
+
+# Virtual Environment
+julius_bot/
+venv/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Dashboard (não será usado na Vercel)
+dashboard/
+
+# Desenvolvimento local
+.env
+.env.local
+.env.development
+.env.test
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Railway (não usado na Vercel)
+railway.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Documentation
+*.md
+!README.md
+
+# Arquivos de backup
+*.bak
+*.tmp
+
+# Jupyter Notebooks
+*.ipynb
+.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/
