@@ -1,12 +1,6 @@
 {
   "version": 2,
   "name": "julius-finance-bot",
-  "env": {
-    "TELEGRAM_BOT_TOKEN": "@telegram_bot_token",
-    "GEMINI_API_KEY": "@gemini_api_key",
-    "SUPABASE_URL": "@supabase_url",
-    "SUPABASE_KEY": "@supabase_key"
-  },
   "functions": {
     "api/webhook.py": {
       "memory": 1024,
